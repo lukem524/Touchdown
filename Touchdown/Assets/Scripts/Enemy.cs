@@ -18,11 +18,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * _enemySpeed *Time.deltaTime);
-    }
-
-void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
-            Destroy(other.gameObject);
+        if(transform.position.x <-2){
+            Destroy(gameObject);
         }
     }
+
+    public void Hurt(){
+        Destroy(this.gameObject);
+}
 }

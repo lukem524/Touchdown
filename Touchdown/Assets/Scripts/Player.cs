@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private SpawnManager _spawnManager;
     
     //Creating a private float variable for speed.
     [SerializeField]
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float _jumpSpeed = 1f;
+    [SerializeField]
+    private int _lives = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +59,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Damage()
+    {
+        _lives -= 1;
+        Debug.Log(_lives);
+        //if there are no lives, kill the player
+        if(_lives <= 1)
+        {
+            _spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
+        }
+    }
 
-}
+    }
