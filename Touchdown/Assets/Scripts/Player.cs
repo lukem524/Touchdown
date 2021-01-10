@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     //Creating a private float variable for speed.
     [SerializeField]
     private float _playerSpeed = 1f;
+
+    [SerializeField]
+    private float _jumpSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour
     {
         //Callling movement method for the player to move.
         Movement();
+        Jump();
     }
 
     /*Creating a seperate method for movement, so that only the method
@@ -41,6 +45,15 @@ public class Player : MonoBehaviour
 
         //Restricting player movement till the edge of the screen using mathf class
         transform.position = new Vector3(Mathf.Clamp(transform.position.x,-1.2f, 1.2f),transform.position.y, 1.3f);
+    
+    
+
+    }
+
+    void Jump(){
+        if (Input.GetButtonDown("Jump")){
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
+        }
     }
 
 
