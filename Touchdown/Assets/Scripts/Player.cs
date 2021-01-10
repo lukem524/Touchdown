@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     
 
     }
-
+//creating second method for jump function
     void Jump(){
         if (Input.GetButtonDown("Jump")){
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
