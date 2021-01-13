@@ -27,7 +27,17 @@ public class Player : MonoBehaviour
     {
         //Callling movement method for the player to move.
         Movement();
-        Jump();
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position,Vector3.down, out hit))
+        {
+            float hitDistance = hit.distance;
+            if(hitDistance < 0.07f)
+            {
+                Jump();
+            }
+            Debug.Log(hitDistance);
+        }
+        
     }
 
     /*Creating a seperate method for movement, so that only the method
