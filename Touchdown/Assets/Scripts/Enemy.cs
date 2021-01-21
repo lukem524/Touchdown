@@ -23,7 +23,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Hurt(){
+    public void Hurt()
+    {
         Destroy(this.gameObject);
-}
+    }
 }

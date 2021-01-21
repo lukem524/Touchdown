@@ -17,11 +17,13 @@ public class smacked : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.name == "Player"){
+        if (other.name == "Player")
+        {
             foreach(Transform child in transform)
             child.gameObject.SetActive(false);
 
-            Destroy(transform.parent.gameObject, 0.1f);
+            Destroy(transform.parent.gameObject, 0f);
+            Score.scoreValue += 1;
         }
         else if(other.name == "Enemy"){
             
