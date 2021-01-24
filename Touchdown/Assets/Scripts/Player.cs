@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     private float _jumpSpeed = 1f;
     [SerializeField]
     private int _lives = 1;
+    [SerializeField]
+    private GameObject _ball;
+    [SerializeField]
+    private Transform _shotPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +83,5 @@ public class Player : MonoBehaviour
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
         }
-    
     }
-
     }

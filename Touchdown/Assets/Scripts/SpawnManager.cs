@@ -5,14 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private Transform _spawnPos;
-    [SerializeField]
-    private Transform _spawnPos_two;
-
-    [SerializeField]
-    private Transform _spawnPos_three;
-
-    [SerializeField]
     private GameObject _enemyContainer;
     [SerializeField]
     private GameObject _enemyPrefab;
@@ -22,16 +14,14 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _ballPrefab;
-
+    [SerializeField]
     public bool _stopSpawning = false;
     // Start is called before the first frame update
     void Start()
     {
+        
         StartCoroutine(SpawnRoutine());
-        StartCoroutine(SpawnRoutineBall());
-        StartCoroutine(SpawnRoutineBall_two());
-        StartCoroutine(SpawnRoutineBall_three());
-    }
+        StartCoroutine(SpawnRoutineBall());    }
 
     // Update is called once per frame
     void Update()
@@ -42,8 +32,8 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnRoutine()
     {
         while (_stopSpawning == false){
+            yield return new WaitForSeconds(1);
             Vector3 spawn = new Vector3(1.5f, 0.406f, 1.3f);
-
             GameObject newEnemy = Instantiate(_enemyPrefab, spawn, Quaternion.identity);
             newEnemy.transform.SetParent(_enemyContainer.transform);
             yield return new WaitForSeconds(Random.Range(1f, 3f));
@@ -53,28 +43,11 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnRoutineBall()
     {
         while (_stopSpawning == false){
-            GameObject ball = Instantiate(_ballPrefab, _spawnPos.position, Quaternion.identity);
+            Vector3 _posToSpawn = new Vector3(Random.Range(-1.1f, 0.5f), Random.Range(0.7f, 1f), 1.3f);
+            GameObject ball = Instantiate(_ballPrefab, _posToSpawn, Quaternion.identity);
             ball.transform.SetParent(_ballContainer.transform);
-            yield return new WaitForSeconds(Random.Range(6f, 9f));
+            yield return new WaitForSeconds(Random.Range(3f, 4f));
         }
-    }
-
-    IEnumerator SpawnRoutineBall_two()
-    {
-        while (_stopSpawning == false){
-            GameObject ball = Instantiate(_ballPrefab, _spawnPos_two.position, Quaternion.identity);
-            ball.transform.SetParent(_ballContainer.transform);
-            yield return new WaitForSeconds(Random.Range(3f, 7f));
-        } 
-    }   
-
-    IEnumerator SpawnRoutineBall_three()
-    {
-        while (_stopSpawning == false){
-            GameObject ball = Instantiate(_ballPrefab, _spawnPos_three.position, Quaternion.identity);
-            ball.transform.SetParent(_ballContainer.transform);
-            yield return new WaitForSeconds(Random.Range(4f, 8f));
-        } 
     }
 
 public void OnPlayerDeath(){
