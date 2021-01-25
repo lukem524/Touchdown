@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
         if(other.tag == "Player"){
             Destroy(this.gameObject);
             _ballHolder += 1;
-            Score.scoreValue += 1;
+            
         }
     }
 }

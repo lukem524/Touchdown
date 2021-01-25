@@ -39,4 +39,12 @@ public class Goalpost : MonoBehaviour
     private void movePostDown(){
                 transform.Translate(0,-speed*Time.deltaTime, 0);
     }
+
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "ball_shot"){
+            Destroy(other.gameObject);
+            Score.scoreValue += 1;
+        }
+    }
 }

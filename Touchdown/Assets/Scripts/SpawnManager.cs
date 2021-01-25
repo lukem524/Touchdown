@@ -44,9 +44,9 @@ public class SpawnManager : MonoBehaviour
     {
         while (_stopSpawning == false){
             Vector3 _posToSpawn = new Vector3(Random.Range(-1.1f, 0.5f), Random.Range(0.7f, 1f), 1.3f);
-            GameObject ball = Instantiate(_ballPrefab, _posToSpawn, Quaternion.identity);
-            ball.transform.SetParent(_ballContainer.transform);
-            yield return new WaitForSeconds(Random.Range(3f, 4f));
+            GameObject _ball = Instantiate(_ballPrefab, _posToSpawn, Quaternion.identity);
+            _ball.transform.SetParent(_ballContainer.transform);
+            yield return new WaitForSeconds(Random.Range(2f, 4f));
         }
     }
 
