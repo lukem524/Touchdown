@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    _Holder.text = "Ammo" + _ballHolder;
+        _Holder.text = "Ammo" + _ballHolder;
     }
 
     private void ballLaunch(){

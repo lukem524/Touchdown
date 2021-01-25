@@ -7,7 +7,7 @@ public class Goalpost : MonoBehaviour
 
 
     [SerializeField]
-    public float speed = 1f;
+    public float speed = 1.5f;
     [SerializeField]
     bool _switch = true;
     // Start is called before the first frame update
@@ -21,9 +21,9 @@ public class Goalpost : MonoBehaviour
     {
         
             if(_switch){
-                moveBirdUp();
+                movePostUp();
     } else if(!_switch){
-        moveBirdDown();
+        movePostDown();
     }
 
     if(transform.position.y >= 1.3f){
@@ -33,10 +33,10 @@ public class Goalpost : MonoBehaviour
     }
     }
 
-    private void moveBirdUp(){
+    private void movePostUp(){
         transform.Translate(0,speed*Time.deltaTime, 0);
     }
-    private void moveBirdDown(){
+    private void movePostDown(){
                 transform.Translate(0,-speed*Time.deltaTime, 0);
     }
 }

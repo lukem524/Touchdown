@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private SpawnManager _spawnManager;
+
+    private Ball Ball;
     
     //Creating a private float variable for speed.
     [SerializeField]
@@ -18,6 +20,11 @@ public class Player : MonoBehaviour
     private GameObject _ball;
     [SerializeField]
     private Transform _shotPoint;
+
+    [SerializeField]
+    private float _ballSpeed = 2f;
+
+    public RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +38,18 @@ public class Player : MonoBehaviour
     {
         //Callling movement method for the player to move.
         Movement();
-        RaycastHit hit;
+        
         if(Physics.Raycast(transform.position,Vector3.down, out hit))
         {
             float hitDistance = hit.distance;
             if(hitDistance < 0.07f)
             {
                 Jump();
+            }
+
+            if(hitDistance > 0.07){
+                if(Input.GetKeyDown("w")){
+                shoot();
             }
             Debug.Log(hitDistance);
         }
@@ -68,10 +80,23 @@ public class Player : MonoBehaviour
     }
 //creating second method for jump function
     void Jump(){
+        float hitDistance = hit.distance;
         if (Input.GetButtonDown("Jump")){
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
+            }
         }
+
     }
+    public void shoot(){
+        if(Ball._ballHolder >= 1){
+            Instantiate(_ball, _shotPoint.position, Quaternion.identity);
+            Ball._ballHolder -= 1;
+        }
+        else{
+            return;
+        }
+            
+        }
 
     public void Damage()
     {

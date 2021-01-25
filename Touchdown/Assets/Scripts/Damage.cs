@@ -25,6 +25,7 @@ public class Damage : MonoBehaviour
                 Destroy(other.gameObject);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 Score.scoreValue = 0;
+                Ball._ballHolder = 0;
             }
             
         }
