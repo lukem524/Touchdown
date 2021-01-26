@@ -24,4 +24,11 @@ public class BallShot : MonoBehaviour
              Destroy(this.gameObject);
          }
     }
+
+    private void OnTriggerEnter(Collider other) {
+    if(other.tag == "Bomb"){
+        Destroy(other.gameObject);
+        Destroy(this.gameObject);
+    } 
+    }
 }

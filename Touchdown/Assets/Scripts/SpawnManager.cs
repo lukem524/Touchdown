@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _bombPrefab;
+    [SerializeField]
     private GameObject _enemyContainer;
     [SerializeField]
     private GameObject _enemyPrefab;
@@ -16,17 +18,25 @@ public class SpawnManager : MonoBehaviour
     private GameObject _ballPrefab;
     [SerializeField]
     public bool _stopSpawning = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
         
         StartCoroutine(SpawnRoutine());
-        StartCoroutine(SpawnRoutineBall());    }
+        StartCoroutine(SpawnRoutineBall());
+        StartCoroutine(SpawnRoutineBomb());
+        }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnPlayerDeath(){
+        _stopSpawning = true;
     }
 
     IEnumerator SpawnRoutine()
@@ -48,10 +58,15 @@ public class SpawnManager : MonoBehaviour
             _ball.transform.SetParent(_ballContainer.transform);
             yield return new WaitForSeconds(Random.Range(2f, 4f));
         }
-    }
+        
+        }
 
-public void OnPlayerDeath(){
-        _stopSpawning = true;
-    }
-
+    IEnumerator SpawnRoutineBomb(){
+             while (_stopSpawning == false){
+                 yield return new WaitForSeconds(2);
+                 Vector3 _postoSpawn = new Vector3(1.6f, Random.Range(1.2f, 1f), 1.3f);
+                 GameObject _newBomb = Instantiate(_bombPrefab, _postoSpawn, Quaternion.identity);
+                 yield return new WaitForSeconds(3f);
+             }
+        }
 }

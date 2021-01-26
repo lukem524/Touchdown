@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25366647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.191, y: 0.396, z: 1.3}
+  m_LocalPosition: {x: -1.161, y: 0.442, z: 1.3}
   m_LocalScale: {x: 0.12422596, y: 0.12422596, z: 0.12422596}
   m_Children:
   - {fileID: 230783277}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 1.3
-  _jumpSpeed: 2
+  _jumpSpeed: 2.1
   _lives: 1
   _ball: {fileID: 1034533719133268931, guid: d6f01bf588ea1524b864c608276909a2, type: 3}
   _shotPoint: {fileID: 230783277}
@@ -842,6 +842,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21d7309fdd0c4345b0109b3e9463460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bombPrefab: {fileID: 1143358127007300284, guid: 9b86c051722144c4688465c08915ffe7,
+    type: 3}
   _enemyContainer: {fileID: 930485433}
   _enemyPrefab: {fileID: 299806049107506384, guid: 282c477c82656434d91aedf337d43d9d,
     type: 3}
