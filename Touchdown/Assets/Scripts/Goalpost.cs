@@ -26,9 +26,9 @@ public class Goalpost : MonoBehaviour
         movePostDown();
     }
 
-    if(transform.position.y >= 1.3f){
+    if(transform.position.y >= 1.8f){
         _switch = false;
-    } if(transform.position.y <= 0.45f){
+    } if(transform.position.y <= -1.8f){
         _switch = true;
     }
     }

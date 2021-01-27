@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private float _playerSpeed = 1f;
 
     [SerializeField]
-    private float _jumpSpeed = 1f;
+    private float _jumpSpeed = 10f;
     [SerializeField]
     private int _lives = 1;
     [SerializeField]
@@ -21,15 +21,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform _shotPoint;
 
-    [SerializeField]
-    private float _ballSpeed = 2f;
-
     public RaycastHit hit;
     // Start is called before the first frame update
     void Start()
     {
         //This is to position the player at the left side of the screen in the ground
-        transform.position = new Vector3 (-1.1f, 0.45f, 1.3f);
+        transform.position = new Vector3 (-10f, -2.5f, 1.3f);
 
     }
 
@@ -38,20 +35,18 @@ public class Player : MonoBehaviour
     {
         //Callling movement method for the player to move.
         Movement();
-        
+        float hitDistance = hit.distance;
+        Debug.Log(hitDistance);
         if(Physics.Raycast(transform.position,Vector3.down, out hit))
         {
-            float hitDistance = hit.distance;
-            if(hitDistance < 0.07f)
-            {
+            if(hitDistance > 1.99f){
                 Jump();
             }
-
-            if(hitDistance > 0.07){
+            
+            if(hitDistance > 1){
                 if(Input.GetKeyDown("w")){
                 shoot();
             }
-            Debug.Log(hitDistance);
         }
         
     }
@@ -73,16 +68,15 @@ public class Player : MonoBehaviour
 
 
         //Restricting player movement till the edge of the screen using mathf class
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-1.2f, 1.2f),transform.position.y, 1.3f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-10f, 10f),transform.position.y, 1.3f);
     
     
 
     }
 //creating second method for jump function
     void Jump(){
-        float hitDistance = hit.distance;
         if (Input.GetButtonDown("Jump")){
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
+            gameObject.GetComponent<Rigidbody>().AddForce(transform.up * _jumpSpeed);
             }
         }
 
