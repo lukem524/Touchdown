@@ -11,14 +11,14 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         
-        transform.position = new Vector3(14f, -2.5f, 1.3f);
+        transform.position = new Vector3(1.5f, 0.406f, 1.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.left * _enemySpeed *Time.deltaTime);
-        if(transform.position.x <-11f){
+        if(transform.position.x <-2){
             Destroy(gameObject);
         }
     }
