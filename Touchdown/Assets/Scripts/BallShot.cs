@@ -18,8 +18,9 @@ public class BallShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //making the ball move to the right.
          transform.Translate(Vector3.right * _ballshotSpeed * Time.deltaTime);
-
+        //if the ball's x position is greater than 1.5, destroy the ball shot
          if(transform.position.x > 1.5){
              Destroy(this.gameObject);
          }
@@ -27,6 +28,7 @@ public class BallShot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
     if(other.tag == "Bomb"){
+        //if this object hits the object with the tag bomb destroy both objects.
         Destroy(other.gameObject);
         Destroy(this.gameObject);
     } 

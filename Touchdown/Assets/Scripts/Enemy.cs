@@ -11,18 +11,21 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         
-        transform.position = new Vector3(1.5f, 0.406f, 1.3f);
+        transform.position = new Vector3(1.5f, 0.6f, 1.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //moving the enemy to the left position. 
         transform.Translate(Vector3.left * _enemySpeed *Time.deltaTime);
+        //if position of the enemey is less than -2, destroy this game object.
         if(transform.position.x <-2){
             Destroy(gameObject);
         }
     }
 
+    
     public void Hurt()
     {
         Destroy(this.gameObject);

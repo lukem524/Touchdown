@@ -16,9 +16,12 @@ public class scrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //getting the components for the mesh renderer and material of the quad object.
         MeshRenderer mr = GetComponent<MeshRenderer>();
         Material mat = mr.material;
-        Vector2 offset = mat.mainTextureOffset;
+        Vector3 offset = mat.mainTextureOffset;
+        //mobing the material in order to give an endless runner effect.
         offset.x += Time.deltaTime/speed;
         mat.mainTextureOffset = offset;
     }

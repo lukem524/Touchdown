@@ -18,13 +18,15 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //getting the text inside the canvas
     _Holder = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _Holder.text = "Ammo" + _ballHolder;
+        //setting the text to read Ammo: + the amount of balls catched/thrown.
+        _Holder.text = "Ammo: " + _ballHolder;
     }
 
     private void ballLaunch(){
@@ -32,6 +34,7 @@ public class Ball : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        //if the ball hits the other player, the ball get's destroyed. 
         if(other.tag == "Player"){
             Destroy(this.gameObject);
             _ballHolder += 1;

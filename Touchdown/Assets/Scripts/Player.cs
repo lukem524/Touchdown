@@ -42,18 +42,20 @@ public class Player : MonoBehaviour
         if(Physics.Raycast(transform.position,Vector3.down, out hit))
         {
             float hitDistance = hit.distance;
-            if(hitDistance < 0.07f)
+            if(hitDistance < 0.14f)
             {
                 Jump();
             }
 
-            if(hitDistance > 0.07){
+            if(hitDistance > 0.14f){
                 if(Input.GetKeyDown("w")){
                 shoot();
             }
             Debug.Log(hitDistance);
         }
         
+    }
+    
     }
 
     /*Creating a seperate method for movement, so that only the method
@@ -85,8 +87,7 @@ public class Player : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
             }
         }
-
-    }
+//creating instructions for what happens when player shoots
     public void shoot(){
         if(Ball._ballHolder >= 1){
             Instantiate(_ball, _shotPoint.position, Quaternion.identity);
@@ -98,7 +99,7 @@ public class Player : MonoBehaviour
             
         }
 
-
+//creating a damage function so that the player can be destroyed
     public void Damage()
     {
         _lives -= 1;

@@ -17,16 +17,20 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //making the ball move into the left position
         transform.Translate(Vector3.left * _bombSpeed * Time.deltaTime);
 
+        //if position of the bomb is less then or equal to 1.4, destory the bomb. 
         if(transform.position.x <= -1.4f){
             Destroy(this.gameObject);
         }
     }
 
+    // If bomb hits the player, destroy the player, reset the Ammo to 0 and go to the main menu scene.
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
             Destroy(other.gameObject);
+            Ball._ballHolder = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }

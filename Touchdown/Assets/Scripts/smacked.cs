@@ -17,6 +17,8 @@ public class smacked : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+
+        //if the top collider get's in contact with the player, destory the enemy and add 1 to score.
         if (other.name == "Player")
         {
             foreach(Transform child in transform)
@@ -24,9 +26,6 @@ public class smacked : MonoBehaviour
 
             Destroy(transform.parent.gameObject, 0f);
             Score.scoreValue += 1;
-        }
-        else if(other.name == "Enemy"){
-            
         }
     }
 }
