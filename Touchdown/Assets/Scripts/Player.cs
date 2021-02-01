@@ -115,8 +115,8 @@ public class Player : MonoBehaviour
         if(_lives <= 1)
         {
             _spawnManager.OnPlayerDeath();
-            DeathMusic.Play();//Audio Source DeathMusic to play after player loses lives
             Destroy(this.gameObject);
+            DeathMusic.Play();//Audio Source DeathMusic to play after player loses lives
         }
     }
     }

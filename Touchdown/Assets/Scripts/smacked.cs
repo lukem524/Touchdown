@@ -28,12 +28,11 @@ public class smacked : MonoBehaviour
         {
             foreach(Transform child in transform)
             child.gameObject.SetActive(false);
-            DeathSound.Play();//Audio Source DeathSound will play after enemy dies
-
-            Destroy(transform.parent.gameObject, 0f);
-            ScoreSound.Play();//Audio Source ScoreSound will play after player dies
             Score.scoreValue += 1;
-
+            ScoreSound.Play();//Audio Source ScoreSound will play after player dies
+            DeathSound.Play();//Audio Source DeathSound will play after enemy dies
+            transform.position = Vector3.one * 9999f; // move the game object off screen while it finishes it's sound, then destroy it
+            Destroy(transform.parent.gameObject, 0f);
         }
     }
 }

@@ -30,8 +30,8 @@ public class Damage : MonoBehaviour
             if(player != null)
             {
                 Destroy(other.gameObject);
-                DeathMusic.Play();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                DeathMusic.Play();//Audio Source DeathSound will play after enemy dies
                 Score.scoreValue = 0;
                 Ball._ballHolder = 0;
             }
