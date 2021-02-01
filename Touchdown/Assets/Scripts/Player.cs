@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float _ballSpeed = 2f;
+
+    [SerializeField]
+    public AudioSource JumpSound;//Created an audio source called JumpSound to be able to place the audio file needed in unity
+
+    public AudioSource DeathMusic;//Created an audio source called DeathMusic to be able to place the audio file needed in unity
 
     public RaycastHit hit;
     // Start is called before the first frame update
@@ -84,6 +90,7 @@ public class Player : MonoBehaviour
     void Jump(){
         float hitDistance = hit.distance;
         if (Input.GetButtonDown("Jump")){
+            JumpSound.Play();//Playing the Audio Source after player jumps
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
             }
         }
@@ -108,6 +115,7 @@ public class Player : MonoBehaviour
         if(_lives <= 1)
         {
             _spawnManager.OnPlayerDeath();
+            DeathMusic.Play();//Audio Source DeathMusic to play after player loses lives
             Destroy(this.gameObject);
         }
     }

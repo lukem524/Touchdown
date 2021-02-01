@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211c6ef99afd1ea499c6c3ff2d0b6c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathSound: {fileID: 0}
+  ScoreSound: {fileID: 0}
 --- !u!1 &6676113842613728416
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,3 +345,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3b6f7d7a9e8a34aaae1d17234f2d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathMusic: {fileID: 0}

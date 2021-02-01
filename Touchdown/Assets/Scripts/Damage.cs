@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Damage : MonoBehaviour
 {
+    [SerializeField]
+    public AudioSource DeathMusic;//Created an audio source called JumpSound to be able to place the audio file needed in unity
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class Damage : MonoBehaviour
             if(player != null)
             {
                 Destroy(other.gameObject);
+                DeathMusic.Play();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 Score.scoreValue = 0;
                 Ball._ballHolder = 0;

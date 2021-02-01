@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goalpost : MonoBehaviour
 {
-
 
     [SerializeField]
     public float speed = 1.5f;
     [SerializeField]
     bool _switch = true;
     // Start is called before the first frame update
+
+    [SerializeField]
+    public AudioSource ScoreSound;//Created an audio source called ScoreSound to be able to place the audio file needed in unity
     void Start()
     {
         
@@ -50,6 +53,7 @@ public class Goalpost : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "ball_shot"){
             Destroy(other.gameObject);
+            ScoreSound.Play();//Playing the Audio Source after ball enters the goal post
             Score.scoreValue += 1;
         }
     }
