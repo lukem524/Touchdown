@@ -7,6 +7,8 @@ public class smacked : MonoBehaviour
 {
     [SerializeField]
     public AudioSource DeathSound; //Created an audio source called DeathSound to be able to place the audio file needed in unity
+
+    [SerializeField]
     public AudioSource ScoreSound; //Created an audio source called ScoreSound to be able to place the audio file needed in unity
 
     // Start is called before the first frame update

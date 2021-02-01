@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     public AudioSource JumpSound;//Created an audio source called JumpSound to be able to place the audio file needed in unity
 
+    [SerializeField]
     public AudioSource DeathMusic;//Created an audio source called DeathMusic to be able to place the audio file needed in unity
 
     public RaycastHit hit;

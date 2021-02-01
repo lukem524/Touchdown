@@ -13,7 +13,9 @@ public class Ball : MonoBehaviour
     private Text _Holder;
 
 
-    
+    [SerializeField]
+
+    public AudioSource BallCollect;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class Ball : MonoBehaviour
         //if the ball hits the other player, the ball get's destroyed. 
         if(other.tag == "Player"){
             Destroy(this.gameObject);
+            BallCollect.Play();
             _ballHolder += 1;
             
         }

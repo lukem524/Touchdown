@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0
+  BallCollect: {fileID: 7599915743038043555, guid: b3bde34cc661eb542bd4701467b007f8,
+    type: 3}
 --- !u!212 &-999493847315695675
 SpriteRenderer:
   m_ObjectHideFlags: 0
