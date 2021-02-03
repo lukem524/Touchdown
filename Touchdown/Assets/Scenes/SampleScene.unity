@@ -254,12 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcbf15edc25fbd4391a691845f7b81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreMultiplier: 1
   _playerSpeed: 1
   _jumpSpeed: 2
   _lives: 1
   _ball: {fileID: 1034533719133268931, guid: d6f01bf588ea1524b864c608276909a2, type: 3}
   _shotPoint: {fileID: 230783277}
   _ballSpeed: 1
+  _ispowerupActive: 0
   JumpSound: {fileID: 2777021932944865620}
   DeathMusic: {fileID: 223974227}
 --- !u!65 &25366653
@@ -1631,6 +1633,8 @@ MonoBehaviour:
   _ballContainer: {fileID: 2097189705}
   _ballPrefab: {fileID: 1034533719133268931, guid: 164d7f78c541f0b4c8a6ee1011f94d45,
     type: 3}
+  _proteinShake: {fileID: 2535889789634581350, guid: 43405dece81237e4c8bd8fe1e9fa138c,
+    type: 3}
   _stopSpawning: 0
 --- !u!4 &1859956568
 Transform:
@@ -2268,6 +2272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpSound
       objectReference: {fileID: 0}
+    - target: {fileID: 2805363769913273545, guid: bd8759e197764434fa7f05b43193a5d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4129969052236980567, guid: bd8759e197764434fa7f05b43193a5d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2332,6 +2341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: BypassListenerEffects
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987234844299724257, guid: bd8759e197764434fa7f05b43193a5d9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8759e197764434fa7f05b43193a5d9, type: 3}

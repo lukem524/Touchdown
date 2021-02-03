@@ -31,6 +31,7 @@ public class Bomb : MonoBehaviour
         if(other.tag == "Player"){
             Destroy(other.gameObject);
             Ball._ballHolder = 0;
+            Score.scoreValue = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }

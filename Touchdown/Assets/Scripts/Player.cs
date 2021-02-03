@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     private SpawnManager _spawnManager;
 
     private Ball Ball;
+
+    [SerializeField]
+    private int _scoreMultiplier = 2;
     
     //Creating a private float variable for speed.
     [SerializeField]
@@ -24,6 +27,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float _ballSpeed = 2f;
+
+    [SerializeField]
+    private bool _ispowerupActive = false;
 
     [SerializeField]
     public AudioSource JumpSound;//Created an audio source called JumpSound to be able to place the audio file needed in unity
@@ -60,6 +66,7 @@ public class Player : MonoBehaviour
             }
             Debug.Log(hitDistance);
         }
+
         
     }
     
@@ -119,5 +126,12 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
             DeathMusic.Play();//Audio Source DeathMusic to play after player loses lives
         }
+    }
+
+
+    public void ScoreAmmoMultiplier(){
+        Ball._ballHolder += 10;
+        _ispowerupActive = true;
+        
     }
     }

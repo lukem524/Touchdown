@@ -16,6 +16,10 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _ballPrefab;
+
+    [SerializeField]
+    private GameObject _proteinShake;
+
     [SerializeField]
     public bool _stopSpawning = false;
 
@@ -27,6 +31,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnRoutine());
         StartCoroutine(SpawnRoutineBall());
         StartCoroutine(SpawnRoutineBomb());
+        StartCoroutine(SpawnRoutinePowerup());
         }
 
     // Update is called once per frame
@@ -78,6 +83,15 @@ public class SpawnManager : MonoBehaviour
                 GameObject _newBomb = Instantiate(_bombPrefab, _postoSpawn, Quaternion.identity);
                  //wait for 3 seconds before spawning another bomb.
                 yield return new WaitForSeconds(3f);
+            }
+        }
+
+        IEnumerator SpawnRoutinePowerup(){
+            while (_stopSpawning == false){
+                yield return new WaitForSeconds(5f);
+                Vector3 _postoSpawn = new Vector3(Random.Range(-0.7f, 0.2f), 0.5f, 1.3f);
+                GameObject _Powerup = Instantiate(_proteinShake, _postoSpawn, Quaternion.identity);
+                yield return new WaitForSeconds(10f);
             }
         }
 }
