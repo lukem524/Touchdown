@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         //calling all the coroutine so the objects can start spawning
-        StartCoroutine(SpawnRoutine());
+        StartCoroutine(SpawnRoutineEnemy());
         StartCoroutine(SpawnRoutineBall());
         StartCoroutine(SpawnRoutineBomb());
         StartCoroutine(SpawnRoutinePowerup());
@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
         _stopSpawning = true;
     }
 //creating a coroutine to spawn the enemy.
-    IEnumerator SpawnRoutine()
+    IEnumerator SpawnRoutineEnemy()
     {
         while (_stopSpawning == false){
             //wait for one second before starting to spawn. 

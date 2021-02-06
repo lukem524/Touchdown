@@ -97,14 +97,18 @@ public class Player : MonoBehaviour
 //creating second method for jump function
     void Jump(){
         float hitDistance = hit.distance;
+        //if space is pressed
         if (Input.GetButtonDown("Jump")){
             JumpSound.Play();//Playing the Audio Source after player jumps
+            //player jumps
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, _jumpSpeed, 0f), ForceMode.Impulse);
             }
         }
+
 //creating instructions for what happens when player shoots
     public void shoot(){
         if(Ball._ballHolder >= 1){
+            //if Ammo is greater or equal to 1, spawn a ball.
             Instantiate(_ball, _shotPoint.position, Quaternion.identity);
             Ball._ballHolder -= 1;
         }

@@ -21,7 +21,7 @@ public class scrolling : MonoBehaviour
         MeshRenderer mr = GetComponent<MeshRenderer>();
         Material mat = mr.material;
         Vector3 offset = mat.mainTextureOffset;
-        //mobing the material in order to give an endless runner effect.
+        //moving the material in order to give an endless runner effect.
         offset.x += Time.deltaTime/speed;
         mat.mainTextureOffset = offset;
     }

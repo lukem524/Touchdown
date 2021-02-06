@@ -2189,6 +2189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 8980515740704973102, guid: c259ef332aa29f24e828171b9a441123,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c259ef332aa29f24e828171b9a441123, type: 3}
 --- !u!1001 &2062679364359708614
@@ -2202,6 +2207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BallCollect
+      objectReference: {fileID: 0}
+    - target: {fileID: 882554354390072872, guid: b3bde34cc661eb542bd4701467b007f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8540086699563466030, guid: b3bde34cc661eb542bd4701467b007f8,
         type: 3}
@@ -2367,6 +2377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreSound
       objectReference: {fileID: 0}
+    - target: {fileID: 524742977655852348, guid: 16a4a6b6d9d75fd40a611dc538b94e18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7910450764260233579, guid: 16a4a6b6d9d75fd40a611dc538b94e18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2441,6 +2456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BombSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256202043548318825, guid: dcfd4e30ef7f43a43ac066362ba8bb63,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7400311182668091443, guid: dcfd4e30ef7f43a43ac066362ba8bb63,
         type: 3}
@@ -2565,6 +2585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DeathSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897509984012348982, guid: d2a61fb2eee66cb46ac68bc93c370cc7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a61fb2eee66cb46ac68bc93c370cc7, type: 3}
