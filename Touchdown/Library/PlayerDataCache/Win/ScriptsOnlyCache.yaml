@@ -24,11 +24,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -68,33 +63,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11476}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11936}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 11962}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12322}
+      Script: {instanceID: 12278}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12506}
     - Class: 114
-      Script: {instanceID: 12564}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 12810}
+      Script: {instanceID: 12766}
     - Class: 114
-      Script: {instanceID: 12964}
+      Script: {instanceID: 12920}
     - Class: 114
-      Script: {instanceID: 13166}
+      Script: {instanceID: 13122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -153,47 +148,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11476}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11678}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11936}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12322}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12372}
+      Script: {instanceID: 12278}
     - Class: 114
-      Script: {instanceID: 12428}
+      Script: {instanceID: 12328}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12384}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12472}
     - Class: 114
-      Script: {instanceID: 12810}
+      Script: {instanceID: 12692}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12766}
     - Class: 114
-      Script: {instanceID: 12936}
+      Script: {instanceID: 12862}
     - Class: 114
-      Script: {instanceID: 13054}
+      Script: {instanceID: 12892}
     - Class: 114
-      Script: {instanceID: 13166}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 23782}
+      Script: {instanceID: 13174}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -401,6 +396,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Powerup
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -719,14 +720,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Powerup
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/mical/Desktop/FinalBuild/Touchdown.exe
+  playerPath: D:/MCAST ICA/Second Year/First Semester/Game Engines/Assignment/Task
+    3/Touchdown.exe
