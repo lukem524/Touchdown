@@ -8,6 +8,8 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField]
     private float _bombSpeed = 1f;
+    [SerializeField]
+    private float _bombrotation = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,9 @@ public class Bomb : MonoBehaviour
     void Update()
     {
         //making the ball move into the left position
-        transform.Translate(Vector3.left * _bombSpeed * Time.deltaTime);
+        transform.Translate(-_bombSpeed*Time.deltaTime, 0,0);
+        transform.Rotate(0, 0, _bombrotation * Time.deltaTime);
+        
 
         //if position of the bomb is less then or equal to 1.4, destory the bomb. 
         if(transform.position.x <= -1.4f){

@@ -23,6 +23,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     public bool _stopSpawning = false;
 
+    [SerializeField]
+    private GameObject _warning;
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,8 +81,20 @@ public class SpawnManager : MonoBehaviour
                  //wait for 2 seconds before starting spawning bombs.
                 yield return new WaitForSeconds(2);
                  //setting the position where the bomb needs to spawn
-                Vector3 _postoSpawn = new Vector3(1.6f, Random.Range(1f, 1.4f), 1.3f);
+                Vector3 _postoSpawn = new Vector3(1.2f, Random.Range(1f, 1.4f), 1.3f);
+                //spawning a warning before the bomb
+                GameObject _newWarning = Instantiate(_warning, _postoSpawn, Quaternion.identity);
+                //a little effect for the warning sign
+                _newWarning.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                _newWarning.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                _newWarning.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                _newWarning.SetActive(false);
+                Destroy(_newWarning);
                  //spawning the bomb
+                yield return new WaitForSeconds(0.5f);
                 GameObject _newBomb = Instantiate(_bombPrefab, _postoSpawn, Quaternion.identity);
                  //wait for 3 seconds before spawning another bomb.
                 yield return new WaitForSeconds(3f);
