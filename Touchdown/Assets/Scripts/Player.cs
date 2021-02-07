@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
     }
 
 
-    public void ScoreAmmoMultiplier(){
+    public void AmmoMultiplier(){
         Ball._ballHolder += 10;
         _ispowerupActive = true;
         
