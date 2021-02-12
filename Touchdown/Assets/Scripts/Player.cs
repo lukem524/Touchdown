@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -38,11 +39,16 @@ public class Player : MonoBehaviour
     public AudioSource DeathMusic;//Created an audio source called DeathMusic to be able to place the audio file needed in unity
 
     public RaycastHit hit;
+    private UIManager _uiManager;
     // Start is called before the first frame update
     void Start()
     {
         //This is to position the player at the left side of the screen in the ground
         transform.position = new Vector3 (-1.1f, 0.45f, 1.3f);
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        if(_uiManager == null){
+            Debug.LogError("The UIManager is null");
+        }
 
     }
 
@@ -123,12 +129,14 @@ public class Player : MonoBehaviour
     {
         _lives -= 1;
         Debug.Log(_lives);
+        _uiManager.UpdateLives(_lives);
         //if there are no lives, kill the player
-        if(_lives <= 1)
+        if(_lives >= 1)
         {
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
             DeathMusic.Play();//Audio Source DeathMusic to play after player loses lives
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 

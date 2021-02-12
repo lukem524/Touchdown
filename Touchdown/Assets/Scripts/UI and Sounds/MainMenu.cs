@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public void QuitGame ()
     {
         Application.Quit();
-        Debug.Log("Exiting Game");//Added Debug to make sure button is working since it is not possible to quit the application in inspector 
+        Debug.Log("Exiting Game");//Added Debug to make sure button is working since it is not possible to quit the application in inspector
+        //PlayerPrefs.SetInt("highscore", 0); - This line of code is to reset the high score each time we make a build of the game.
+        
     }
 }

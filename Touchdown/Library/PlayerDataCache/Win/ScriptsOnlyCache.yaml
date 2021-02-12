@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - Powerup
     - Score
     - SpawnManager
+    - UIManager
     - scrolling
     - smacked
     Unity.Rider.Editor.dll:
@@ -52,11 +53,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -189,6 +196,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13152}
     - Class: 114
       Script: {instanceID: 13204}
+    - Class: 114
+      Script: {instanceID: 91806}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -720,8 +729,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: e3679d98f7140109cd27833d541094df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/andya/OneDrive/Desktop/Touchdown.exe
+  playerPath: C:/Users/mical/Desktop/Test/Touchdown.exe

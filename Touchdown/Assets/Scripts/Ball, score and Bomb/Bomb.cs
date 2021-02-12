@@ -33,7 +33,14 @@ public class Bomb : MonoBehaviour
     // If bomb hits the player, destroy the player, reset the Ammo to 0 and go to the main menu scene.
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
-            Destroy(other.gameObject);
+            Player player = other.GetComponent<Player>();
+            if(player != null){
+                player.Damage();
+                if (Score.scoreValue > PlayerPrefs.GetInt("highscore"))
+            {
+                PlayerPrefs.SetInt("highscore", Score.scoreValue);
+            }
+            }
             Ball._ballHolder = 0;
             Score.scoreValue = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
