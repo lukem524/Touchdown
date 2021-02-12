@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; //Calling the use for SceneManagement to have the ability to switch scenes
 
 public class MainMenu : MonoBehaviour
 {
+    public Text HSText;
+
+    private void Start() 
+    {
+        HSText.text = "HIGHSCORE:" + "" + PlayerPrefs.GetInt("highscore");
+    }
     public void PlayGame ()
     {
         //Used SceneManger to load the current scene 'MainMenu' and added te value +1 to go to the next scene

@@ -27,6 +27,11 @@ public class Damage : MonoBehaviour
         //if the bottom collider of the enemy touches the player, the player dies, score is set to 0, ammo is set to 0 and the main menu scene is loaded.
         if(other.tag == "Player"){
             Player player = other.GetComponent<Player>();
+            if (Score.scoreValue > PlayerPrefs.GetInt("highscore"))
+            {
+                PlayerPrefs.SetInt("highscore", Score.scoreValue);
+            }
+            
             if(player != null)
             {
                 Destroy(other.gameObject);

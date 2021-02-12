@@ -20,7 +20,7 @@ public class Powerup : MonoBehaviour
         if(other.tag == "Player"){
             Destroy(this.gameObject);
 
-           Player player = other.GetComponent<Player>();
+        Player player = other.GetComponent<Player>();
             if(player != null){
                 player.AmmoMultiplier();
             }
